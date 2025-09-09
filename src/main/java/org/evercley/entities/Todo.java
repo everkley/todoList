@@ -13,24 +13,24 @@ public class Todo {
     private String nome;
     private String descricao;
     private Boolean realizado;
-    private int prioridade;
+    private Integer prioridade;
 
 
     public Todo() {
     }
 
-    public Todo(String nome, String descricao, Boolean realizado, int prioridade) {
+    public Todo(String nome, String descricao, Boolean realizado, Integer prioridade) {
         this.nome = nome;
         this.descricao = descricao;
         this.realizado = realizado;
         this.prioridade = prioridade;
     }
 
-    public int getPrioridade() {
+    public Integer getPrioridade() {
         return prioridade;
     }
 
-    public void setPrioridade(int prioridade) {
+    public void setPrioridade(Integer prioridade) {
         this.prioridade = prioridade;
     }
 

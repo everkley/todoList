@@ -1,4 +1,4 @@
-package org.evercley.repository;
+package org.evercley.repositories;
 
 import org.evercley.entities.Todo;
 import org.springframework.data.jpa.repository.JpaRepository;
