@@ -5,9 +5,6 @@ Aplicação de gerenciamento de tarefas com suporte a CRUD, priorização e filt
 - [Tecnologias](#tecnologias)
 - [Instalação](#instalacao)
 - [Uso](#uso)
-- [Exemplos de API](#exemplos-de-api)
-- [Contribuição](#contribuicao)
-- [Licença](#licenca)
 
 ## Funcionalidades
 - Criar, atualizar e deletar tarefas
@@ -32,7 +29,7 @@ Aplicação de gerenciamento de tarefas com suporte a CRUD, priorização e filt
 
 2. Suba o projeto na IDE de sua preferencia
 
-## Swagger
+## Uso
 
 A aplicação possui documentação interativa da API via Swagger.
 
