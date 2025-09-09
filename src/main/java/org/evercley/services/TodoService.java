@@ -2,6 +2,7 @@ package org.evercley.services;
 
 import org.evercley.dtos.TodoDTO;
 import org.evercley.entities.Todo;
+import org.evercley.mappers.TodoMapper;
 import org.evercley.repositories.TodoRepository;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
@@ -11,27 +12,29 @@ import java.util.List;
 @Service
 public class TodoService {
     private final TodoRepository todoRepository;
+    private final TodoMapper todoMapper;
 
-    public TodoService(TodoRepository todoRepository) {
+    public TodoService(TodoRepository todoRepository, TodoMapper todoMapper) {
         this.todoRepository = todoRepository;
+        this.todoMapper = todoMapper;
     }
 
     public TodoDTO create(TodoDTO dto) {
-        Todo entity = new Todo(dto.getNome(), dto.getDescricao(), dto.getRealizado(), dto.getPrioridade());
+        Todo entity = todoMapper.toEntity(dto);
         Todo saved = todoRepository.save(entity);
-        return new TodoDTO(saved);
+        return todoMapper.toDto(saved);
     }
 
     public List<TodoDTO> list() {
         Sort sort = Sort.by("prioridade").descending().and(Sort.by("nome").ascending());
-        return todoRepository.findAll(sort).stream().map(TodoDTO::new).toList();
+        return todoMapper.toDtoList(todoRepository.findAll(sort));
     }
 
 
     public TodoDTO update(TodoDTO dto) {
-        Todo entity = new Todo(dto.getNome(), dto.getDescricao(), dto.getRealizado(), dto.getPrioridade());
+        Todo entity = todoMapper.toEntity(dto);
         Todo saved = todoRepository.save(entity);
-        return new TodoDTO(saved);
+        return todoMapper.toDto(saved);
     }
 
     public void delete(Long id) {
