@@ -19,7 +19,8 @@ public class Todo {
     public Todo() {
     }
 
-    public Todo(String nome, String descricao, Boolean realizado, Integer prioridade) {
+    public Todo(Long id, String nome, String descricao, Boolean realizado, Integer prioridade) {
+        this.id = id;
         this.nome = nome;
         this.descricao = descricao;
         this.realizado = realizado;

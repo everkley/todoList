@@ -13,7 +13,7 @@ public class TodoMapper {
         if (dto == null) {
             return null;
         }
-        return new Todo(dto.getNome(), dto.getDescricao(), dto.getRealizado(), dto.getPrioridade());
+        return new Todo(dto.getId(),dto.getNome(), dto.getDescricao(), dto.getRealizado(), dto.getPrioridade());
     }
 
     public TodoDTO toDto(Todo todo) {
