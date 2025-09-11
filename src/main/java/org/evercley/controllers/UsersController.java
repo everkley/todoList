@@ -50,7 +50,7 @@ public class UsersController {
         return ResponseEntity.created(uri).body(userDTO);
     }
 
-    @PostMapping("/validarUsuario")
+    @PostMapping("validarUsuario")
     @Operation(summary = "valida se a senha informada pertence ao usuário")
     public ResponseEntity<Boolean> validarPassword(@RequestBody UserDTO dto) {
         return ResponseEntity.ok().body(userService.validatePassword(dto));
