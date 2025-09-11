@@ -36,4 +36,4 @@ A aplicação possui documentação interativa da API via Swagger.
 Para acessar o Swagger UI:
 http://localhost:8080/swagger-ui/index.html
 
-Com o Swagger você pode testar todos os endpoints diretamente no navegador, visualizar modelos de request/response e gerar documentação automática.
+Com o Swagger você pode testar todos os endpoints diretamente no navegador, visualizar modelos de request/response
