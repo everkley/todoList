@@ -53,4 +53,25 @@ public class UserService {
         return encoder.matches(userDTO.getPassword(), user.getPassword());
     }
 
+    public UserDTO update(UserDTO userDTO) {
+        User user = userRepository.findByUsername(userDTO.getUsername());
+        if (user == null) {
+            throw new UserNotFoundException(userDTO.getUsername());
+        }
+        user.setUsername(userDTO.getUsername());
+        if (userDTO.getPassword() != null && !userDTO.getPassword().isEmpty()) {
+            user.setPassword(encoder.encode(userDTO.getPassword()));
+        }
+
+        return userMapper.toDto(userRepository.save(user));
+    }
+
+    public void delete(String username) {
+        User user = userRepository.findByUsername(username);
+        if (user == null) {
+            throw new UserNotFoundException(username);
+        }
+        userRepository.delete(user);
+    }
+
 }

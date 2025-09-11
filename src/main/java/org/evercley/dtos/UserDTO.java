@@ -16,6 +16,7 @@ public class UserDTO {
     public UserDTO(User user) {
         this.id = user.getId();
         this.username = user.getUsername();
+        this.password = user.getPassword();
     }
 
     public UserDTO(Long id, String username) {
